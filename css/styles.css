@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    background-color: black;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo div {
+    padding: 10px;
+}
+
+.logo img {
+    background-color: white;
+    padding: 3px;
+}
+
+.name-pagina {
+    color: white;
+    font-size: 18px;
+}
+
+.lista-menu {
+    display: flex;
+    list-style: none;
+}
+
+.lista-menu li {
+    padding: 0 20px;
+}
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+.nav-link:hover {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+
+.nav-boton {
+    display: none;
+}
+
+.nav-boton .boton img {
+    padding: 5px 5px;
+}
+
+.boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton svg{
+    /* border-radius: 5px; */
+    border: 2px solid black;
+
+}
+
+.active {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+
+/* Estilos seccion main */
+.main-principal {
+    margin: 50px 20px;
+    padding: 20px 20px;
+    border: 3px solid black;
+}
+
+.sistema-ecuaciones div{
+    padding: 10px 0;
+}
+
+.sistema {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    /* align-items: center; */
+}
+
+/* Estilos para los inputs */
+.ecuacion input {
+    height: 25px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Diseno botones del sistema */
+.botones {
+    display: grid;
+    justify-content: center;
+}
+
+.botonA {
+    margin: 4px 4px;
+    padding: 4px 4px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.botonA:hover {
+    background-color: rgb(86, 101, 115);
+}
+
+/* Diseno resultado */
+.resultados {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@media (max-width: 780px) {
+    .nav {
+        justify-content: space-around;
+        padding: 0px 0px;
+        position: fixed;
+        left: 0px;
+        width: 100%;
+        top: 0;
+    }
+    .nav-boton {
+        display: flex;
+        padding-left: 50%;
+    }
+    .name-pagina {
+        display: none;
+    }
+    .lista-menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(86, 101, 115, .7);
+        left: 100%;
+        position: fixed;
+        top: 80px;
+        width: 100%;
+        height: 93%;
+        transition: ease .5s;
+    }
+
+    .active-boton{
+        left: 0;
+    }
+
+    .lista-menu li {
+        margin: 30px;
+    }
+    
+
+    /* diseno responsivo para sistema */
+    .main-principal {
+        margin-top: 100px;
+    }
+    .sistema {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .resultados {
+        margin: 80px 0;
+    }
+
+    .resultados label{
+        margin: 30px 0px 30px 0px;
+
+    }
+
+    /* .nav-link {
+        font-size: 22px;
+        color: black;
+    } */
+}
