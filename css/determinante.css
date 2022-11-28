@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    background-color: black;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo div {
+    padding: 10px;
+}
+
+.logo img {
+    background-color: white;
+    padding: 3px;
+}
+
+.name-pagina {
+    color: white;
+    font-size: 18px;
+}
+
+.lista-menu {
+    display: flex;
+    list-style: none;
+}
+
+.lista-menu li {
+    padding: 0 20px;
+}
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+.nav-link:hover {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+
+.nav-boton {
+    display: none;
+}
+
+.nav-boton .boton img {
+    padding: 5px 5px;
+}
+
+.boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton svg{
+    /* border-radius: 5px; */
+    border: 2px solid black;
+
+}
+
+.active {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+
+.main-principal {
+    margin: 20px 20px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.section1 {
+    text-align: center;
+}
+
+.table {
+    margin: 20px 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    height: 50px;
+    width: 50px;
+    color: black;
+    background-color: mintcream;
+    font-size: 35px;
+    text-align: center;
+}
+
+.section2 {
+    display: grid;
+    text-align: center;
+
+}
+
+.botones {
+    padding-bottom: 10px;
+}
+
+.botones1 {
+    padding-bottom: 20px;
+}
+
+.btn-botones{
+    padding: 4px 4px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: azure;
+}
+
+.btn-botones:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+
+

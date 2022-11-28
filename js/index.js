@@ -91,31 +91,65 @@ botonReiniciar.addEventListener('click', () => {
 })
 // Fin boton reiniciar
 
+const ecuMatriz = (string) => {
+    const newString = string.match(/[+-=-]?\d*.?\d*?[a-zA-Z]|[-+]?[0-9][0-9]*.?\d*/g)
+    console.log(newString)
+    const matriz = newString.map(element => {
+        let val = Number(element[0])
+        if (element.length <= 2 && isNaN(Number(element)) && isNaN(val)) {
+            console.log(element)
+            if (element.split('')[0] == '-') {
+                return -1
+            }
+            return 1
+        } else {
+            if (!isNaN(Number(element))) {
+                return Number(element)
+            }
+            element = element.split('')
+            element.pop()
+            element = Number(element.join(''))
+            console.log(element)
+            return element
+        }
+    })
+    return matriz
+}
+
 // Boton calcular
 botonCalcular.addEventListener('click', () => {
     let newSolucion = []
+    let prueba1 =[]
     for(let i = arrayMatriz.length; i >= 0; i--) {
         arrayMatriz.pop()
     }
     ecuaciones = document.querySelectorAll('input')
     ecuaciones.forEach(input => {
-        arrayMatriz.push(input.value.match(/[\+\-]?\d+/g) )
+        // arrayMatriz.push(input.value.match(/[\+\-]?\d+/g) )
+        prueba1.push(ecuMatriz(input.value))
+        // arrayMatriz.push(ecuMatriz(input.value))
     });
+    // console.log(typeof arrayMatriz[0][0])
+    // arrayMatriz = rMath.arrStringToNumber(arrayMatriz)
 
-    arrayMatriz = rMath.arrStringToNumber(arrayMatriz)
-    let solucion = rMath.metodoGauss(arrayMatriz)
+    // console.log(arrayMatriz)
+    console.log(prueba1)
+    let solucion = rMath.metodoGauss(prueba1)
+    console.log(solucion)
     
 
     for (let clave in solucion) {
         if(!(solucion[clave] % 1 == 0)){
             // solucion[clave] = rMath.fraccion(solucion[clave].toPrecision(3))
             newSolucion.push(rMath.fraccion(solucion[clave].toPrecision(3)))
+
         }else{
             newSolucion.push(solucion[clave].toString())
         }
     }
 
     newSolucion = newSolucion.toString()
+    newSolucion = newSolucion.split(',').join(',  ')
     labelResultado.innerHTML = newSolucion
     // console.log(rMath.metodoGauss(arrayMatriz))
 })
@@ -129,3 +163,9 @@ botonCalcular.addEventListener('click', () => {
 //1x-3y+2z=7
 //4x-7y+5z=-14
 //3x+1y-1z=10
+
+const molaridad = (gramos, sustancia, litros) => {
+    return (gramos/ sustancia) / litros
+}
+
+console.log((molaridad(100, 136, 12).toPrecision(3)))

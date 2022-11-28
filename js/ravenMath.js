@@ -9,6 +9,7 @@ export const modFila = (fila, pivote, sesgo) => {
 export const metodoGauss = (array) => {
     // Declaracion de variables
     let numVariables = array[0].length - 1
+    console.log('NUMERO DE VARIABLES', numVariables)
     const pivote = array[0]
     let camFila1, camFila2, camFila3, camFila4
     let x, y, z, a, b
@@ -57,6 +58,7 @@ export const metodoGauss = (array) => {
             return {x, y, z, a}
             break;
         case 5:
+            console.log('Por que estas entradon aqui aaaaaaaaaa')
             console.table(array)
             camFila1 = modFila(array[1], pivote, (array[1][0] / -array[0][0]))
             camFila2 = modFila(array[2], pivote, (array[2][0] / -array[0][0]))
@@ -95,10 +97,11 @@ export const arrStringToNumber = (array) => {
 }
 
 export const fraccion = (number) => {
+    console.log('Numerooooo', number)
     let numerador, entero, denominador, signo, maxDiv
     numerador = number.toString().split('.')[1]
     entero = number.toString().split('.')[0]
-    if(Number(entero) < 0){
+    if(Number(entero) < 0 || number < 0){
         console.log('Entero: ', entero)
         signo = entero.charAt()
         entero = entero.split('').splice(1, entero.split('').length).join('')
@@ -106,6 +109,7 @@ export const fraccion = (number) => {
     }else{
         signo = '+'
     }
+    console.log(numerador)
     console.log(numerador)
     denominador = Math.pow(10, numerador.length)
     numerador = Number(numerador)
@@ -133,6 +137,14 @@ export const maxComDiv = (numero1, numero2) => {
     return numero1
 }
 
+export const determinate = (array) => {
+    const tamArray = array.length
+    
+}
+
+let  det = determinate([[], []])
+
+console.log(det)
 
 export default {
     metodoGauss,
